@@ -13,7 +13,7 @@ public class Player {
     //Henter spillerens navn
     public Player(String s) {
         Player = s;
-        points = 0;
+        points = 1000;
     }
 
 
@@ -31,7 +31,7 @@ public class Player {
     }
 
     //opdaterer spillerens score
-    public void opdaterScore(int sum) {
+    public void updateScore(int sum) {
         points += sum;
     }
 
@@ -40,7 +40,7 @@ public class Player {
         return points;
     }
 
-    public int getCurrentPlayer() {
-        return CurrentPlayer;
-    }
+  //  public int getCurrentPlayer() {
+    //    return CurrentPlayer;
+    //}
 }
