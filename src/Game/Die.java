@@ -1,3 +1,5 @@
+package Game;
+
 import java.lang.Math;
 
 public class Die {

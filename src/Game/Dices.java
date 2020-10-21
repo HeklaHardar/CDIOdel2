@@ -1,3 +1,5 @@
+package Game;
+
 public class Dices {
 
     Die die1 = new Die(6);
