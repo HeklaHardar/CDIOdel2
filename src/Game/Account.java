@@ -5,7 +5,7 @@ public class Account {
     private int points = 1500;
 
 
-    public Account(Object s){
+    public Account(){
 
 
 
