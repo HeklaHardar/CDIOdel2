@@ -4,20 +4,20 @@ public class Die {
     int max;
     int min = 1;
 
-    int Vaerdi; //parametre
+    int Value; //parametre
 
     public Die(int maximum) { // Konstruktor
         max = maximum + 1;
         roll();
     }
 
-    public int getVaerdi() { //metode
-        return Vaerdi;
+    public int getValue() { //metode
+        return Value;
     }
 
     public int roll() {
-        Vaerdi = (int) (Math.random() * (max - min) + min);
-        return Vaerdi;
+        Value = (int) (Math.random() * (max - min) + min);
+        return Value;
     }
 
 /* Gammel metode, ikke i brug

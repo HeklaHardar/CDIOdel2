@@ -5,13 +5,12 @@ public class Player {
     private int max = 3;
     private String Player;
     private int PlayerStarter = (int) (Math.random() * (max - min) + min);
-    private boolean spS;
-    private int point;
+    private int points;
 
     //Henter spillerens navn
     public Player(String s) {
         Player = s;
-        point = 0;
+        points = 0;
     }
 
     //Vælger tilfældigt hvem der starter spillet
@@ -29,11 +28,11 @@ public class Player {
 
     //opdaterer spillerens score
     public void opdaterScore(int sum) {
-        point += sum;
+        points += sum;
     }
 
     //returner spillerens nye score
     public int score() {
-        return point;
+        return points;
     }
 }
