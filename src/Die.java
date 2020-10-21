@@ -1,12 +1,12 @@
 import java.lang.Math;
 
-public class Terning {
+public class Die {
     int max;
     int min = 1;
 
     int Vaerdi; //parametre
 
-    public Terning(int maximum) { // Konstruktor
+    public Die(int maximum) { // Konstruktor
         max = maximum + 1;
         roll();
     }
