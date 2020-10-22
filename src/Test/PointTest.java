@@ -9,22 +9,21 @@ import static org.junit.Assert.*;
 
 public class PointTest {
 
-    private Player currentPlayer;
-    private Account currentAccount;
+
     Dices d1 = new Dices();
     private boolean Winner = false;
     Fields f1 = new Fields(d1.sum());
     private int Round = 1;
+    Player p1 = new Player("Test 1");
+    Player p2 = new Player("Test 2");
+    Account ac = new Account();
+    Account ac1 = new Account();
+    Player[] Players = {p1,p2};
+    Account[] accounts = {ac,ac1};
+    CurrentPlayer currentplayer = new CurrentPlayer();
 
     @Test
     public void getPointTest(){
-
-        Player player1 = new Player("Test1");
-        Player player2 = new Player("Test2");
-        Account player1Account = new Account();
-        Account player2Account = new Account();
-        currentPlayer = player1;
-        currentAccount = player1Account;
 
 
         for(int i = 1000; i > 0; --i){
@@ -32,33 +31,41 @@ public class PointTest {
 
             while(!Winner) {
                 d1.roll();
-                System.out.println(d1.toString());
-                Fields f1 = new Fields(d1.sum());
-                currentAccount.updateScore(f1.getMoney());
-                currentPlayer.updateScore(f1.getMoney());
-                System.out.println("New Score: " + currentAccount.score() + " " + currentPlayer.playerString() + " " + "Round: " + Round);
+                int sum = d1.sum();
+                //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
+                Fields f1 = new Fields(sum);
+                int new_money = f1.getMoney();
 
-                assertTrue(String.valueOf(true), currentAccount.score() >= 0);
+                accounts[currentplayer.getCurrentPlayer()].updateScore(new_money);
+                //System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
 
-                if(currentAccount.score()>=3000){
+                assertTrue(String.valueOf(true),accounts[currentplayer.getCurrentPlayer()].score()>=0);
+
+                if(accounts[currentplayer.getCurrentPlayer()].score() >= 3000){
                     Winner = true;
                     break;
                 }
-                if (currentPlayer == player1 && !(d1.sum() == 10)) {
-                    currentPlayer = player2;
-                    currentAccount = player2Account;
-                } else if (currentPlayer == player2 && !(d1.sum() == 10)) {
-                    currentPlayer = player1;
-                    currentAccount = player1Account;
 
+                if (f1.isHasExtraTurn() == true){
+             //       System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Got An Extra Turn");
+                    continue;
                 }
+            //    System.out.println(" ");
+                if (currentplayer.getCurrentPlayer() == 0){
+                    currentplayer.setCurrentPlayer(1);
+                }
+                else if(currentplayer.getCurrentPlayer() == 1){
+                    currentplayer.setCurrentPlayer(0);
+                }
+
+
             }
 
             if(Winner){
-                System.out.println("End of round: " + Round);
+             //   System.out.println("End of round: " + Round);
                 Round +=1;
-                player1Account.updateScore(999);
-                player2Account.updateScore(999);
+                ac.updateScore(999);
+                ac1.updateScore(999);
                 Winner = false;
 
             }
