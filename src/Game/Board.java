@@ -68,6 +68,9 @@ public class Board {
             System.out.println(" ");
 
             isWinner = accounts[currentplayer.currentPlayer].isWin();
+            if(isWinner == true){
+                break;
+            }
             //sets current player
             if (currentplayer.getCurrentPlayer() == 0) {
                 currentplayer.setCurrentPlayer(1);
