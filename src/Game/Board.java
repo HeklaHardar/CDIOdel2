@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Board {
 
-
+    Menu menu1 = new Menu();
     private Player currentPlayer;
     Dices d1 = new Dices();
     Scanner scan = new Scanner(System.in);
     private boolean Winner = false;
     Fields f1 = new Fields(d1.sum());
 
-
-
-
     public void Play(){
 
-        Player player1 = new Player("Mikkel");
-        Player player2 = new Player("Lekkim");
+        menu1.Menu();
+        String Language = menu1.getLanguage();
+        // System.out.println(Language);
+        Player player1 = new Player(menu1.getPlayer1());
+        Player player2 = new Player(menu1.getPlayer2());
         currentPlayer = player1;
 
         Account account = new Account(currentPlayer.toString());
