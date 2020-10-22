@@ -5,7 +5,7 @@ public class Account {
     private int points = 1500;
 
 
-    public Account(String name){
+    public Account(){
     }
 
     //Updates player score
