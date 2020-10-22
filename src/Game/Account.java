@@ -5,7 +5,7 @@ public class Account {
     private int points = 1500;
     boolean win = false;
 
-    public Account(){
+    public Account() {
     }
 
     //Updates player score
@@ -13,11 +13,11 @@ public class Account {
 
         points += sum;
 
-        if (points < 0){
+        if (points < 0) {
             points = 0;
         }
 
-        if(points>2999){
+        if (points > 2999) {
             win = true;
         }
 

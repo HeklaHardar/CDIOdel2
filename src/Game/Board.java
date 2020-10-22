@@ -16,35 +16,33 @@ public class Board {
         //Making Accounts for each player
         Account ac = new Account();
         Account ac1 = new Account();
-        Account[] accounts = {ac,ac1};
+        Account[] accounts = {ac, ac1};
 
         //Instantiating Players
         Player p1 = new Player(menu1.getPlayer1());
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" Summen af dine slag er: ", " Points: ", " Fik en ekstra tur", " Har Vundet! ", "Tryk enter for at slå med terningerne"};
-        String[] textEnglish = {" The sum of dices is: ", " Points: ", " Got An Extra Turn", " Has Won ", " Press enter to roll dices " };
+        String[] textDanish = {" summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har Vundet! ", "Tryk enter for at slå med terningerne"};
+        String[] textEnglish = {" the sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices "};
         String[] currentLanguage = new String[3];
-
-
+        
 
         //Setting language for board output
-        if (language == "danish"){
+        if (language == "danish") {
             currentLanguage = textDanish;
-        }
-        else if(language == "english"){
+        } else if (language == "english") {
             currentLanguage = textEnglish;
         }
         Scanner scan = new Scanner(System.in);
 
         //instatiating Array of Players and setting currentplayer
-        Player[] Players = {p1,p2};
+        Player[] Players = {p1, p2};
         CurrentPlayer currentplayer = new CurrentPlayer();
 
         boolean isWinner = false;
 
-        while(isWinner == false){
+        while (isWinner == false) {
             //roll dices and outputs roll, checks current player and language
             System.out.println(currentLanguage[4]);
             scan.nextLine();
@@ -58,11 +56,11 @@ public class Board {
 
             //adds score to account depending on currentplayer
             accounts[currentplayer.currentPlayer].updateScore(new_money);
-            System.out.println( currentLanguage[1]
+            System.out.println(currentLanguage[1]
                     + accounts[currentplayer.currentPlayer].score());
 
             //checks if there is extra turn
-            if (f1.hasExtraTurn == true){
+            if (f1.hasExtraTurn == true) {
                 System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[2]);
                 System.out.println(" ");
                 continue;
@@ -71,17 +69,13 @@ public class Board {
 
             isWinner = accounts[currentplayer.currentPlayer].isWin();
             //sets current player
-            if (currentplayer.getCurrentPlayer() == 0){
+            if (currentplayer.getCurrentPlayer() == 0) {
                 currentplayer.setCurrentPlayer(1);
-            }
-            else if(currentplayer.getCurrentPlayer() == 1){
+            } else if (currentplayer.getCurrentPlayer() == 1) {
                 currentplayer.setCurrentPlayer(0);
             }
         }
         System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[3]);
 
-
     }
-
-
 }

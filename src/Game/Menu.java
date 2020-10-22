@@ -12,31 +12,31 @@ public class Menu {
     String player2 = "";
 
     // Starts the menu
-    public void Menu(){
+    public void Menu() {
 
         // Select language
         System.out.println("Dansk/English");
 
         // Runs a while loop until an available language is selected
-        while (ReadLanguage == true){
+        while (ReadLanguage == true) {
 
             //Makes the input of the user into lowercase
-        String LanguageString = scan.nextLine();
-        String LanguageStringLower = LanguageString.toLowerCase();
+            String LanguageString = scan.nextLine();
+            String LanguageStringLower = LanguageString.toLowerCase();
 
-        if (LanguageStringLower.equals("dansk") || LanguageStringLower.equals("danish")) {
-            Language = "danish";
-            ReadLanguage = false;
-        } else if (LanguageStringLower.equals("engelsk") || LanguageStringLower.equals("english")) {
-            Language = "english";
-            ReadLanguage = false;
-        }  else {
-            System.out.println("Unknown input, try again");
-        }
+            if (LanguageStringLower.equals("dansk") || LanguageStringLower.equals("danish")) {
+                Language = "danish";
+                ReadLanguage = false;
+            } else if (LanguageStringLower.equals("engelsk") || LanguageStringLower.equals("english")) {
+                Language = "english";
+                ReadLanguage = false;
+            } else {
+                System.out.println("Unknown input, try again");
+            }
         }
 
         // If danish is selected
-        if(Language == "danish") {
+        if (Language == "danish") {
             System.out.println("Velkommen til spillet!");
 
             System.out.print("Indtast navn for spiller 1: ");
@@ -47,7 +47,7 @@ public class Menu {
         }
 
         // If english is selected
-        else if(Language == "english") {
+        else if (Language == "english") {
             System.out.println("Welcome to the game!");
 
             System.out.print("Enter name for player 1: ");

@@ -2,13 +2,17 @@ package Game;
 
 public class Dices {
 
+    // Creates two dices
     Die die1 = new Die(6);
     Die die2 = new Die(6);
 
-    public int sum(){
+    // Gets the sum of both dices
+    public int sum() {
         return die1.getValue() + die2.getValue();
     }
-    public Dices roll(){
+
+    // Rolls both dices
+    public Dices roll() {
         die1.roll();
         die2.roll();
         return this;
@@ -17,7 +21,7 @@ public class Dices {
     @Override
     public String toString() {
         return
-                 die1.getValue() +
-                ", " + die2.getValue();
+                die1.getValue() +
+                        ", " + die2.getValue();
     }
 }

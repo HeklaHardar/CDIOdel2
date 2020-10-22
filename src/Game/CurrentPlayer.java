@@ -6,8 +6,6 @@ public class CurrentPlayer {
     private int PlayerStarter = (int) (Math.random() * (max - min) + min);
     int currentPlayer = PlayerStarter;
 
-
-
     public int getCurrentPlayer() {
         return currentPlayer;
     }

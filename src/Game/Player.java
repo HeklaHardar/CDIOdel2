@@ -2,18 +2,13 @@ package Game;
 
 public class Player {
 
-    //Sætter variabler
+    // Determines variables
 
     private String Player;
 
-    private int points;
-    private int score;
-
-    //Henter spillerens navn
+    // Gets the player's name
     public Player(String s) {
         Player = s;
-        points = 0;
-        Account ac = new Account();
     }
 
     public String playerString() {
