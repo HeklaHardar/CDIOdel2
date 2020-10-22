@@ -25,7 +25,7 @@ public class Menu {
         } else if (LanguageStringLower.equals("engelsk") || LanguageStringLower.equals("english")) {
             Language = "english";
             ReadLanguage = false;
-        } else {
+        }  else {
             System.out.println("Unknown input, try again");
         }
         }
