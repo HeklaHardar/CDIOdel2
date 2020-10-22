@@ -25,5 +25,7 @@ public class Account {
         return points;
     }
 
-
+    public boolean isWin() {
+        return win;
+    }
 }
