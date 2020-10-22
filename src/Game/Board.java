@@ -3,6 +3,7 @@ package Game;
 public class Board {
     public static void main(String[] args) {
         Dices d1 = new Dices();
+        Menu menu = new Menu();
         Account ac = new Account();
         Account ac1 = new Account();
         Account[] accounts = {ac,ac1};
@@ -11,10 +12,11 @@ public class Board {
         String[] textDanish = {"Slog: ", "Points: ", "Fik en ekstra tur" };
         String[] textEnglish = {"Rolled: ", "Points: ", "Got An Extra Turn" };
         String[] currentLanguage = new String[3];
-        if (language == "danish"){
+        menu.Menu();
+        if (menu.getLanguage() == "danish"){
             currentLanguage = textDanish;
         }
-        else if{
+        else{
             currentLanguage = textEnglish;
         }
         Player[] Players = {p1,p2};
