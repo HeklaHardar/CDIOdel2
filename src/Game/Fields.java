@@ -3,6 +3,7 @@ package Game;
 public class Fields {
     boolean hasExtraTurn = false;
     private int money = 0;
+
     public Fields(int sum){
         switch (sum){
             case 2: money = 250;
