@@ -12,7 +12,6 @@ public class PointTest {
 
     Dices d1 = new Dices();
     private boolean Winner = false;
-    Fields f1 = new Fields(d1.sum());
     private int Round = 1;
     Player p1 = new Player("Test 1");
     Player p2 = new Player("Test 2");
@@ -21,6 +20,7 @@ public class PointTest {
     Player[] Players = {p1,p2};
     Account[] accounts = {ac,ac1};
     CurrentPlayer currentplayer = new CurrentPlayer();
+
 
     @Test
     public void getPointTest(){
@@ -32,33 +32,27 @@ public class PointTest {
             while(!Winner) {
                 d1.roll();
                 int sum = d1.sum();
-                //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
                 Fields f1 = new Fields(sum);
                 int new_money = f1.getMoney();
-
+               // System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
                 accounts[currentplayer.getCurrentPlayer()].updateScore(new_money);
-                //System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
-
+//                System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
                 assertTrue(String.valueOf(true),accounts[currentplayer.getCurrentPlayer()].score()>=0);
-
                 if(accounts[currentplayer.getCurrentPlayer()].score() >= 3000){
                     Winner = true;
                     break;
                 }
-
                 if (f1.isHasExtraTurn() == true){
-             //       System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Got An Extra Turn");
+                  //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Got An Extra Turn");
                     continue;
                 }
-            //    System.out.println(" ");
+               //System.out.println(" ");
                 if (currentplayer.getCurrentPlayer() == 0){
                     currentplayer.setCurrentPlayer(1);
                 }
                 else if(currentplayer.getCurrentPlayer() == 1){
                     currentplayer.setCurrentPlayer(0);
                 }
-
-
             }
 
             if(Winner){
