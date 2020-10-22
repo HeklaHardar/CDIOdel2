@@ -4,18 +4,23 @@ import java.util.Scanner;
 
 public class Menu {
 
+    // Defines variables and scanner
     Scanner scan = new Scanner(System.in);
     private String Language;
     private boolean ReadLanguage = true;
     String player1 = "";
     String player2 = "";
 
+    // Starts the menu
     public void Menu(){
 
+        // Select language
         System.out.println("Dansk/English");
 
+        // Runs a while loop until an available language is selected
         while (ReadLanguage == true){
 
+            //Makes the input of the user into lowercase
         String LanguageString = scan.nextLine();
         String LanguageStringLower = LanguageString.toLowerCase();
 
@@ -30,6 +35,7 @@ public class Menu {
         }
         }
 
+        // If danish is selected
         if(Language == "danish") {
             System.out.println("Velkommen til spillet!");
 
@@ -40,6 +46,7 @@ public class Menu {
             player2 = scan.nextLine();
         }
 
+        // If english is selected
         else if(Language == "english") {
             System.out.println("Welcome to the game!");
 
@@ -51,6 +58,8 @@ public class Menu {
         }
 
     }
+
+    // Makes the variables accessible in other classes
     public String getLanguage() {
         return Language;
     }
