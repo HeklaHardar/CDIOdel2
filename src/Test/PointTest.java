@@ -2,9 +2,6 @@ package Test;
 
 import Game.*;
 import org.junit.Test;
-
-import java.util.Scanner;
-
 import static org.junit.Assert.*;
 
 public class PointTest {
@@ -26,13 +23,13 @@ public class PointTest {
     public void getPointTest(){
 
 
-        for(int i = 1000; i > 0; --i){
+        for(int i = 10; i > 0; --i){
 
 
             while(!Winner) {
                 d1.roll();
                 int sum = d1.sum();
-                Fields f1 = new Fields(sum);
+                Fields f1 = new Fields(sum, "danish");
                 int new_money = f1.getMoney();
                // System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
                 accounts[currentplayer.getCurrentPlayer()].updateScore(new_money);
@@ -63,11 +60,6 @@ public class PointTest {
                 Winner = false;
 
             }
-
         }
-
-
     }
-
-
 }
