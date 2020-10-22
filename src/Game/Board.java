@@ -6,6 +6,7 @@ public class Board {
 
 
     private Player currentPlayer;
+    private Account currentAccount;
     Dices d1 = new Dices();
     Scanner scan = new Scanner(System.in);
     private boolean Winner = false;
@@ -16,26 +17,31 @@ public class Board {
 
     public void Play(){
 
+
         Player player1 = new Player("Mikkel");
         Player player2 = new Player("Lekkim");
+        Account player1Account = new Account();
+        Account player2Account = new Account();
         currentPlayer = player1;
+        currentAccount = player1Account;
 
-        Account account = new Account(currentPlayer.toString());
 
 
-        for(; currentPlayer.score() < 3000;) {
+        for(; currentAccount.score() < 3000;) {
             d1.roll();
             System.out.println(d1.toString());
             Fields f1 = new Fields(d1.sum());
-            //account.updateScore(f1.getMoney());
+            currentAccount.updateScore(f1.getMoney());
             currentPlayer.updateScore(f1.getMoney());
-            System.out.println("New Score: " + currentPlayer.score() + " " + currentPlayer.playerString());
+            System.out.println("New Score: " + currentAccount.score() + " " + currentPlayer.playerString());
 
             if(currentPlayer == player1 && !(d1.sum() == 10)){
                 currentPlayer = player2;
+                currentAccount = player2Account;
             }
             else if(currentPlayer == player2 && !(d1.sum() == 10)) {
                 currentPlayer = player1;
+                currentAccount = player1Account;
 
             }
 
