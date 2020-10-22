@@ -3,23 +3,17 @@ package Game;
 public class Player {
 
     //Sætter variabler
-    private int min = 1;
-    private int max = 3;
+
     private String Player;
-    private int PlayerStarter = (int) (Math.random() * (max - min) + min);
-    private int CurrentPlayer = PlayerStarter;
+
     private int points;
+    private int score;
 
     //Henter spillerens navn
     public Player(String s) {
         Player = s;
-        points = 1000;
-    }
-
-
-    //Vælger tilfældigt hvem der starter spillet
-    public int spillerStarter() {
-        return PlayerStarter;
+        points = 0;
+        Account ac = new Account();
     }
 
     public String startString() {
@@ -30,17 +24,4 @@ public class Player {
         return Player;
     }
 
-    //opdaterer spillerens score
-    public void updateScore(int sum) {
-        points += sum;
-    }
-
-    //returner spillerens nye score
-    public int score() {
-        return points;
-    }
-
-  //  public int getCurrentPlayer() {
-    //    return CurrentPlayer;
-    //}
 }

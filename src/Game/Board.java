@@ -1,78 +1,43 @@
 package Game;
 
-import java.util.Scanner;
-
 public class Board {
+    public static void main(String[] args) {
+        Dices d1 = new Dices();
+        Account ac = new Account();
+        Account ac1 = new Account();
+        Account[] accounts = {ac,ac1};
+        Player p1 = new Player("Lau");
+        Player p2 = new Player("Lukas");
+        Player[] Players = {p1,p2};
+        CurrentPlayer currentplayer = new CurrentPlayer();
 
+        for (int i = 0; i < 5; i++){
 
-    private Player currentPlayer;
-    private Account currentAccount;
-    Dices d1 = new Dices();
-    Scanner scan = new Scanner(System.in);
-    private boolean Winner = false;
-    Fields f1 = new Fields(d1.sum());
-
-
-
-
-    public void Play(){
-
-
-        Player player1 = new Player("Mikkel");
-        Player player2 = new Player("Lekkim");
-        Account player1Account = new Account();
-        Account player2Account = new Account();
-        currentPlayer = player1;
-        currentAccount = player1Account;
-
-
-
-        for(; currentAccount.score() < 3000;) {
             d1.roll();
-            System.out.println(d1.toString());
-            Fields f1 = new Fields(d1.sum());
-            currentAccount.updateScore(f1.getMoney());
-            currentPlayer.updateScore(f1.getMoney());
-            System.out.println("New Score: " + currentAccount.score() + " " + currentPlayer.playerString());
+            int sum = d1.sum();
+            System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum);
+            Fields f1 = new Fields(sum);
+            int new_money = f1.getMoney();
 
-            if(currentPlayer == player1 && !(d1.sum() == 10)){
-                currentPlayer = player2;
-                currentAccount = player2Account;
+            accounts[currentplayer.currentPlayer].updateScore(new_money);
+            System.out.println( " Points: "
+                    + accounts[currentplayer.currentPlayer].score());
+
+            if (f1.hasExtraTurn == true){
+                System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + "Got An Extra Turn");
+                continue;
             }
-            else if(currentPlayer == player2 && !(d1.sum() == 10)) {
-                currentPlayer = player1;
-                currentAccount = player1Account;
-
+            System.out.println(" ");
+            if (currentplayer.getCurrentPlayer() == 0){
+                currentplayer.setCurrentPlayer(1);
             }
-
+            else if(currentplayer.getCurrentPlayer() == 1){
+                currentplayer.setCurrentPlayer(0);
+            }
         }
 
 
     }
 
-    public static void main(String[] args) {
 
-        Board board = new Board();
-        board.Play();
-
-    }
-    /*public static void main(String[] args) {
-        Dices d1 = new Dices();
-        Account ac1 = new Account("Player1");
-
-
-        for (int i = 0; i < 1000; i++){
-            d1.roll();
-            int sum = d1.sum();
-            Fields f1 = new Fields(sum);
-            int new_money = f1.getMoney();
-            ac1.updateScore(new_money);
-            int score = ac1.score();
-            System.out.println("New Score:" + score);
-        }*/
-
-
-    }
-
-
-
+}
