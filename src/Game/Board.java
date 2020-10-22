@@ -1,5 +1,7 @@
 package Game;
 
+import java.util.Scanner;
+
 public class Board {
     public static void main(String[] args) {
 
@@ -21,8 +23,8 @@ public class Board {
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" Slog: ", " Points: ", " Fik en ekstra tur", " Har Vundet! " };
-        String[] textEnglish = {" Rolled: ", " Points: ", " Got An Extra Turn", " Has Won " };
+        String[] textDanish = {" Slog: ", " Points: ", " Fik en ekstra tur", " Har Vundet! ", "Tryk enter for at slå med terningerne"};
+        String[] textEnglish = {" Rolled: ", " Points: ", " Got An Extra Turn", " Has Won ", " Press enter to roll dices " };
         String[] currentLanguage = new String[3];
 
 
@@ -34,6 +36,7 @@ public class Board {
         else if(language == "english"){
             currentLanguage = textEnglish;
         }
+        Scanner scan = new Scanner(System.in);
 
         //instatiating Array of Players and setting currentplayer
         Player[] Players = {p1,p2};
@@ -43,6 +46,8 @@ public class Board {
 
         while(isWinner == false){
             //roll dices and outputs roll, checks current player and language
+            System.out.println(currentLanguage[4]);
+            scan.nextLine();
             d1.roll();
             int sum = d1.sum();
             System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[0] + sum);

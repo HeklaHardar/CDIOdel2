@@ -16,10 +16,6 @@ public class Player {
         Account ac = new Account();
     }
 
-    public String startString() {
-        return Player + " Starts";
-    }
-
     public String playerString() {
         return Player;
     }
