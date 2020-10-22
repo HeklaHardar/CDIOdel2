@@ -1,6 +1,7 @@
 package Game;
 
 public class Fields {
+    boolean hasExtraTurn = false;
     private int money = 0;
     public Fields(int sum){
         switch (sum){
@@ -21,6 +22,7 @@ public class Fields {
             case 9: money = 60;
                 break;
             case 10: money = -80;
+            hasExtraTurn = true;
                 break;
             case 11: money = -50;
                 break;
@@ -29,6 +31,14 @@ public class Fields {
 
         }
 
+    }
+
+    public boolean isHasExtraTurn() {
+        return hasExtraTurn;
+    }
+
+    public void setHasExtraTurn(boolean hasExtraTurn) {
+        this.hasExtraTurn = hasExtraTurn;
     }
 
     public int getMoney() {
