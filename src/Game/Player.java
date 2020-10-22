@@ -7,13 +7,15 @@ public class Player {
     private int max = 3;
     private String Player;
     private int PlayerStarter = (int) (Math.random() * (max - min) + min);
+    private int CurrentPlayer = PlayerStarter;
     private int points;
 
     //Henter spillerens navn
     public Player(String s) {
         Player = s;
-        points = 0;
+        points = 1000;
     }
+
 
     //Vælger tilfældigt hvem der starter spillet
     public int spillerStarter() {
@@ -29,7 +31,7 @@ public class Player {
     }
 
     //opdaterer spillerens score
-    public void opdaterScore(int sum) {
+    public void updateScore(int sum) {
         points += sum;
     }
 
@@ -37,4 +39,8 @@ public class Player {
     public int score() {
         return points;
     }
+
+  //  public int getCurrentPlayer() {
+    //    return CurrentPlayer;
+    //}
 }
