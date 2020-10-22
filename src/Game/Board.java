@@ -23,8 +23,8 @@ public class Board {
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" Slog: ", " Points: ", " Fik en ekstra tur", " Har Vundet! ", "Tryk enter for at slå med terningerne"};
-        String[] textEnglish = {" Rolled: ", " Points: ", " Got An Extra Turn", " Has Won ", " Press enter to roll dices " };
+        String[] textDanish = {" Summen af dine slag er: ", " Points: ", " Fik en ekstra tur", " Har Vundet! ", "Tryk enter for at slå med terningerne"};
+        String[] textEnglish = {" The sum of dices is: ", " Points: ", " Got An Extra Turn", " Has Won ", " Press enter to roll dices " };
         String[] currentLanguage = new String[3];
 
 
