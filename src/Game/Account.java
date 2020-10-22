@@ -8,7 +8,7 @@ public class Account {
     public Account() {
     }
 
-    //Updates player score
+    // Updates player score
     public void updateScore(int sum) {
 
         points += sum;
@@ -24,7 +24,7 @@ public class Account {
 
     }
 
-    //returns new score
+    // Returns new score
     public int score() {
         return points;
     }

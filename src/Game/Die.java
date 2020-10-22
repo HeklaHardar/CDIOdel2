@@ -3,7 +3,7 @@ package Game;
 import java.lang.Math;
 
 public class Die {
-    //defines variables
+    // Defines variables
     int max;
     int min = 1;
     int Value;
@@ -14,7 +14,7 @@ public class Die {
         roll();
     }
 
-    public int getValue() { //metode
+    public int getValue() {
         return Value;
     }
 
