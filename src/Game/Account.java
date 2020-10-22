@@ -13,6 +13,10 @@ public class Account {
 
         points += sum;
 
+        if (points < 0){
+            points = 0;
+        }
+
         if(points>2999){
             win = true;
         }
