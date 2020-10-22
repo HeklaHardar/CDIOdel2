@@ -21,8 +21,8 @@ public class Board {
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" Slog: ", " Points: ", " Fik en ekstra tur" };
-        String[] textEnglish = {" Rolled: ", " Points: ", " Got An Extra Turn" };
+        String[] textDanish = {" Slog: ", " Points: ", " Fik en ekstra tur", " Har Vundet! " };
+        String[] textEnglish = {" Rolled: ", " Points: ", " Got An Extra Turn", " Has Won " };
         String[] currentLanguage = new String[3];
 
 
@@ -39,7 +39,9 @@ public class Board {
         Player[] Players = {p1,p2};
         CurrentPlayer currentplayer = new CurrentPlayer();
 
-        while(accounts[currentplayer.currentPlayer].isWin() == false){
+        boolean isWinner = false;
+
+        while(isWinner == false){
             //roll dices and outputs roll, checks current player and language
             d1.roll();
             int sum = d1.sum();
@@ -62,7 +64,7 @@ public class Board {
             }
             System.out.println(" ");
 
-
+            isWinner = accounts[currentplayer.currentPlayer].isWin();
             //sets current player
             if (currentplayer.getCurrentPlayer() == 0){
                 currentplayer.setCurrentPlayer(1);
@@ -71,6 +73,7 @@ public class Board {
                 currentplayer.setCurrentPlayer(0);
             }
         }
+        System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[3]);
 
 
     }
