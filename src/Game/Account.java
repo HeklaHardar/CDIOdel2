@@ -2,7 +2,7 @@ package Game;
 
 public class Account {
 
-    private int points = 1500;
+    private int points = 1000;
     boolean win = false;
 
     public Account() {

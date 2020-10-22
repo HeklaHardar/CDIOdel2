@@ -5,30 +5,30 @@ import java.util.Scanner;
 public class Board {
     public static void main(String[] args) {
 
-        //Creates Menu
+        // Creates Menu
         Menu menu1 = new Menu();
         menu1.Menu();
         String language = menu1.getLanguage();
 
-        //Instantiating Dices
+        // Instantiating Dices
         Dices d1 = new Dices();
 
-        //Making Accounts for each player
+        // Making Accounts for each player
         Account ac = new Account();
         Account ac1 = new Account();
         Account[] accounts = {ac, ac1};
 
-        //Instantiating Players
+        // Instantiating Players
         Player p1 = new Player(menu1.getPlayer1());
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har Vundet! ", "Tryk enter for at slå med terningerne"};
-        String[] textEnglish = {" the sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices "};
+        String[] textDanish = {" summen af dine slag er: ", "Penge: ", " fik en ekstra tur", " har vundet! ", "Tryk enter for at slå med terningerne", "Det er ", "'s tur og"};
+        String[] textEnglish = {" the sum of dices is: ", "Money: ", " got an extra turn", " has won ", "Press enter to roll dices ", "It is ", "'s turn and"};
         String[] currentLanguage = new String[3];
         
 
-        //Setting language for board output
+        // Setting language for board output
         if (language == "danish") {
             currentLanguage = textDanish;
         } else if (language == "english") {
@@ -36,7 +36,7 @@ public class Board {
         }
         Scanner scan = new Scanner(System.in);
 
-        //instatiating Array of Players and setting currentplayer
+        // Instatiating Array of Players and setting currentplayer
         Player[] Players = {p1, p2};
         CurrentPlayer currentplayer = new CurrentPlayer();
 
@@ -48,18 +48,18 @@ public class Board {
             scan.nextLine();
             d1.roll();
             int sum = d1.sum();
-            System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[0] + sum);
+            System.out.println(currentLanguage[5] + Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[6] + currentLanguage[0] + sum);
 
-            //Calculates new score
+            // Calculates new score
             Fields f1 = new Fields(sum, menu1.getLanguage());
             int new_money = f1.getMoney();
 
-            //adds score to account depending on currentplayer
+            // Adds score to account depending on currentplayer
             accounts[currentplayer.currentPlayer].updateScore(new_money);
             System.out.println(currentLanguage[1]
                     + accounts[currentplayer.currentPlayer].score());
 
-            //checks if there is extra turn
+            // Checks if there is extra turn
             if (f1.hasExtraTurn == true) {
                 System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[2]);
                 System.out.println(" ");
@@ -71,7 +71,7 @@ public class Board {
             if(isWinner == true){
                 break;
             }
-            //sets current player
+            // Sets current player
             if (currentplayer.getCurrentPlayer() == 0) {
                 currentplayer.setCurrentPlayer(1);
             } else if (currentplayer.getCurrentPlayer() == 1) {
