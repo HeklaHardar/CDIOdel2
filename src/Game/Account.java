@@ -13,6 +13,12 @@ public class Account {
 
         points += sum;
 
+        if(sum == 999){
+
+            points = 1000;
+
+        }
+
 
     }
 
@@ -20,6 +26,8 @@ public class Account {
     public int score() {
         return points;
     }
+
+
 
 
 }
