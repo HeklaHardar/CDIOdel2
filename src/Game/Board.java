@@ -26,7 +26,7 @@ public class Board {
         String[] textDanish = {" summen af dine slag er: ", "Penge: ", " fik en ekstra tur", " har vundet! ", "Tryk enter for at slå med terningerne", "Det er ", "'s tur og"};
         String[] textEnglish = {" the sum of dices is: ", "Money: ", " got an extra turn", " has won ", "Press enter to roll dices ", "It is ", "'s turn and"};
         String[] currentLanguage = new String[3];
-        
+
 
         // Setting language for board output
         if (language == "danish") {
@@ -68,7 +68,7 @@ public class Board {
             System.out.println(" ");
 
             isWinner = accounts[currentplayer.currentPlayer].isWin();
-            if(isWinner == true){
+            if (isWinner == true) {
                 break;
             }
             // Sets current player

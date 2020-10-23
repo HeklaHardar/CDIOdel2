@@ -8,8 +8,8 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     private String Language;
     private boolean ReadLanguage = true;
-    String player1 = "";
-    String player2 = "";
+    private String player1 = "";
+    private String player2 = "";
 
     // Starts the menu
     public void Menu() {
