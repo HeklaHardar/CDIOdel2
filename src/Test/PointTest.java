@@ -55,8 +55,8 @@ public class PointTest {
             if(Winner){
              //   System.out.println("End of round: " + Round);
                 Round +=1;
-                ac.updateScore(999);
-                ac1.updateScore(999);
+                ac.updateScore(1000);
+                ac1.updateScore(1000);
                 Winner = false;
 
             }

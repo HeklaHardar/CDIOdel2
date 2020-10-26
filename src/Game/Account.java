@@ -21,6 +21,9 @@ public class Account {
             win = true;
         }
 
+        if (sum == 1000)
+            points = 1000;
+
 
     }
 

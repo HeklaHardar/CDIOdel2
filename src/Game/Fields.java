@@ -1,6 +1,7 @@
 package Game;
 
 public class Fields {
+    private boolean test = false;
     boolean hasExtraTurn = false;
     private int money = 0;
     String[] danishDescription = {"Du banker på døren til et højt tårn. En troldmand som bor der åbner døren, og spørger dig om han kan teste sin nye trylleformular på dig. Du siger ja, og han tryller dine øre grønne og giver dig 250 for ulejligheden.", "Du kommer forbi et stort krater. Du synes det er meget flot, og du vil gerne vise det til din mor,  så du køber en souvenir med et billede af det. Du betaler 100.", "Du har nået indgangen til paladset, og finder 100 på jorden og beholder dem.", "Du går gennem ørkenen. Det er meget koldt, så du finder en kaffeautomat og køber 1 kop kaffe(som er meget dyr) for at holde varmen. Du mister 20.", "Du ankommer til Walled city. Du får et job som turguide og tjener 180.", "Du holder pause ved klosteret, der sker ikke noget."
@@ -22,6 +23,9 @@ public class Fields {
             currentDescription = englishDescription;
             currentField = englishField;
             LandedOn = "You have landed on: ";
+        } else if(language == "test"){
+            test = true;
+
         }
         switch (sum) {
             case 2:
