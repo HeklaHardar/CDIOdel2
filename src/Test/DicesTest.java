@@ -20,7 +20,6 @@ public class DicesTest {
             dices.roll();
             assertTrue(String.valueOf(true),dices.sum()>=2);
             assertTrue(String.valueOf(true),dices.sum()<=12);
-
         }
     }
 
@@ -31,7 +30,6 @@ public class DicesTest {
 
         for (int i = 60000; i>=0; i--){
             die.roll();
-
             if(die.getValue()==1)
                 one += 1;
             if(die.getValue()==2)

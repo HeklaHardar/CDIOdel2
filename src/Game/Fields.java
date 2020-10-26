@@ -23,66 +23,87 @@ public class Fields {
             currentDescription = englishDescription;
             currentField = englishField;
             LandedOn = "You have landed on: ";
-        } else if(language == "test"){
+        } else if(language == "test") {
             test = true;
-
         }
         switch (sum) {
             case 2:
                 money = 250;
-                System.out.println(LandedOn + currentField[0]);
-                System.out.println(currentDescription[0]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[0]);
+                    System.out.println(currentDescription[0]);
+                }
                 break;
             case 3:
                 money = -100;
-                System.out.println(LandedOn + currentField[1]);
-                System.out.println(currentDescription[1]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[1]);
+                    System.out.println(currentDescription[1]);
+                }
                 break;
             case 4:
                 money = 100;
-                System.out.println(LandedOn + currentField[2]);
-                System.out.println(currentDescription[2]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[2]);
+                    System.out.println(currentDescription[2]);
+                }
                 break;
             case 5:
                 money = -20;
-                System.out.println(LandedOn + currentField[3]);
-                System.out.println(currentDescription[3]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[3]);
+                    System.out.println(currentDescription[3]);
+                }
                 break;
             case 6:
                 money = 180;
-                System.out.println(LandedOn + currentField[4]);
-                System.out.println(currentDescription[4]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[4]);
+                    System.out.println(currentDescription[4]);
+                }
                 break;
             case 7:
                 money = 0;
-                System.out.println(LandedOn + currentField[5]);
-                System.out.println(currentDescription[5]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[5]);
+                    System.out.println(currentDescription[5]);
+                }
                 break;
             case 8:
                 money = -70;
-                System.out.println(LandedOn + currentField[6]);
-                System.out.println(currentDescription[6]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[6]);
+                    System.out.println(currentDescription[6]);
+                }
                 break;
             case 9:
                 money = 60;
-                System.out.println(LandedOn + currentField[7]);
-                System.out.println(currentDescription[7]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[7]);
+                    System.out.println(currentDescription[7]);
+                }
                 break;
             case 10:
                 money = -80;
-                System.out.println(LandedOn + currentField[8]);
-                System.out.println(currentDescription[8]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[8]);
+                    System.out.println(currentDescription[8]);
+                }
                 hasExtraTurn = true;
                 break;
             case 11:
                 money = -50;
-                System.out.println(LandedOn + currentField[9]);
-                System.out.println(currentDescription[9]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[9]);
+                    System.out.println(currentDescription[9]);
+                }
                 break;
             case 12:
                 money = 650;
-                System.out.println(LandedOn + currentField[10]);
-                System.out.println(currentDescription[10]);
+                if (!test) {
+                    System.out.println(LandedOn + currentField[10]);
+                    System.out.println(currentDescription[10]);
+                }
                 break;
 
         }
