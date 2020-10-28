@@ -18,29 +18,32 @@ public class PointTest {
     Account[] accounts = {ac,ac1};
     CurrentPlayer currentplayer = new CurrentPlayer();
 
-
+    //Test to check if the players balance ever reaches a negative number
     @Test
     public void getPointTest(){
 
-
+        //Plays the game i times
         for(int i = 1000; i > 0; --i){
 
 
             while(!Winner) {
                 d1.roll();
                 int sum = d1.sum();
-                Fields f1 = new Fields(sum, "danish");
+                Fields f1 = new Fields(sum, "test");
                 int new_money = f1.getMoney();
-               // System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
+                //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Slog: " + sum + " \t This is testround: " + Round);
                 accounts[currentplayer.getCurrentPlayer()].updateScore(new_money);
-//                System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
-                assertTrue(String.valueOf(true),accounts[currentplayer.getCurrentPlayer()].score()>=0);
+                //System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
+
+                //Tests the current players balance to see if it's 0 or above.
+                assertTrue("true",accounts[currentplayer.getCurrentPlayer()].score()>=0);
+
                 if(accounts[currentplayer.getCurrentPlayer()].score() >= 3000){
                     Winner = true;
                     break;
                 }
-                if (f1.isHasExtraTurn() == true){
-                  //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Got An Extra Turn");
+                if (f1.isHasExtraTurn()){
+                    //System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + " Got An Extra Turn");
                     continue;
                 }
                //System.out.println(" ");
@@ -55,8 +58,8 @@ public class PointTest {
             if(Winner){
              //   System.out.println("End of round: " + Round);
                 Round +=1;
-                ac.updateScore(999);
-                ac1.updateScore(999);
+                ac.updateScore(1000);
+                ac1.updateScore(1000);
                 Winner = false;
 
             }

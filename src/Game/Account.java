@@ -2,13 +2,13 @@ package Game;
 
 public class Account {
 
-    private int points = 1500;
+    private int points = 1000;
     boolean win = false;
 
     public Account() {
     }
 
-    //Updates player score
+    // Updates player score
     public void updateScore(int sum) {
 
         points += sum;
@@ -21,10 +21,13 @@ public class Account {
             win = true;
         }
 
+        if (sum == 1000)
+            points = 1000;
+
 
     }
 
-    //returns new score
+    // Returns new score
     public int score() {
         return points;
     }

@@ -8,8 +8,8 @@ public class Menu {
     Scanner scan = new Scanner(System.in);
     private String Language;
     private boolean ReadLanguage = true;
-    String player1 = "";
-    String player2 = "";
+    private String player1 = "";
+    private String player2 = "";
 
     // Starts the menu
     public void Menu() {
@@ -44,6 +44,7 @@ public class Menu {
 
             System.out.print("Indtast navn for spiller 2: ");
             player2 = scan.nextLine();
+            System.out.println("");
         }
 
         // If english is selected
@@ -55,6 +56,7 @@ public class Menu {
 
             System.out.print("Enter name for player 2: ");
             player2 = scan.nextLine();
+            System.out.println("");
         }
 
     }
