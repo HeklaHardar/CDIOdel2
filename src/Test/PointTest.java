@@ -22,7 +22,7 @@ public class PointTest {
     @Test
     public void getPointTest(){
 
-
+        //Plays the game i times
         for(int i = 1000; i > 0; --i){
 
 
@@ -36,7 +36,7 @@ public class PointTest {
                 //System.out.println( " Points: " + accounts[currentplayer.getCurrentPlayer()].score());
 
                 //Tests the current players balance to see if it's 0 or above.
-                assertTrue(String.valueOf(true),accounts[currentplayer.getCurrentPlayer()].score()>=0);
+                assertTrue("true",accounts[currentplayer.getCurrentPlayer()].score()>=0);
 
                 if(accounts[currentplayer.getCurrentPlayer()].score() >= 3000){
                     Winner = true;
