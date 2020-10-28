@@ -90,7 +90,7 @@ public class Board {
             }
             System.out.println(currentLanguage[6]);
             String endgame = scan.nextLine();
-            endgame.toLowerCase();
+            endgame = endgame.toLowerCase();
             if (endgame.equals("yes")||endgame.equals("ja")){
                 System.out.println(currentLanguage[5]);
             }
