@@ -23,10 +23,10 @@ public class Board {
         Player p2 = new Player(menu1.getPlayer2());
 
         // Arrays for text for different languages
-        String[] textDanish = {" summen af dine slag er: ", "Penge: ", " fik en ekstra tur", " har vundet! ", "Tryk enter for at slå med terningerne", "Det er ", "'s tur og"};
-        String[] textEnglish = {" the sum of dices is: ", "Money: ", " got an extra turn", " has won ", "Press enter to roll dices ", "It is ", "'s turn and"};
-        String[] currentLanguage = new String[3];
 
+        String[] textDanish = {"Summen af dine slag er: ", "Penge: ", " fik en ekstra tur", " har vundet! ","Tryk enter for at slå med terningerne", "Det er ", "'s tur"};
+        String[] textEnglish = {"The sum of dices is: ", "Money: ", " got an extra turn", " has won ", "Press enter to roll dices ", "It is ", "'s turn"};
+        String[] currentLanguage = new String[6];
 
         // Setting language for board output
         if (language == "danish") {
@@ -44,11 +44,12 @@ public class Board {
 
         while (isWinner == false) {
             //roll dices and outputs roll, checks current player and language
+            System.out.println(currentLanguage[5] + Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[6]);
             System.out.println(currentLanguage[4]);
             scan.nextLine();
             d1.roll();
             int sum = d1.sum();
-            System.out.println(currentLanguage[5] + Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[6] + currentLanguage[0] + sum);
+            System.out.println(currentLanguage[0] + sum);
 
             // Calculates new score
             Fields f1 = new Fields(sum, menu1.getLanguage());
