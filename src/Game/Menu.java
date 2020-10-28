@@ -44,6 +44,7 @@ public class Menu {
 
             System.out.print("Indtast navn for spiller 2: ");
             player2 = scan.nextLine();
+            System.out.println("");
         }
 
         // If english is selected
@@ -55,6 +56,7 @@ public class Menu {
 
             System.out.print("Enter name for player 2: ");
             player2 = scan.nextLine();
+            System.out.println("");
         }
 
     }
