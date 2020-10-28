@@ -4,9 +4,9 @@ import java.lang.Math;
 
 public class Die {
     // Defines variables
-    int max;
-    int min = 1;
-    int Value;
+    private int max;
+    private int min = 1;
+    private int Value;
 
     // Determines the maximum value of the die and rolls it
     public Die(int maximum) {

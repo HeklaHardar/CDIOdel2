@@ -63,19 +63,19 @@ public class Board {
                 int new_money = f1.getMoney();
 
                 //adds score to account depending on currentplayer
-                accounts[currentplayer.currentPlayer].updateScore(new_money);
+                accounts[currentplayer.getCurrentPlayer()].updateScore(new_money);
                 System.out.println(currentLanguage[1]
-                        + accounts[currentplayer.currentPlayer].score());
+                        + accounts[currentplayer.getCurrentPlayer()].score());
 
                 //checks if there is extra turn
-                if (f1.hasExtraTurn == true) {
+                if (f1.isHasExtraTurn()) {
                     System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[2]);
                     System.out.println(" ");
                     continue;
                 }
                 System.out.println(" ");
 
-                isWinner = accounts[currentplayer.currentPlayer].isWin();
+                isWinner = accounts[currentplayer.getCurrentPlayer()].isWin();
                 if (isWinner == true) {
                     System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[3]);
                     break;

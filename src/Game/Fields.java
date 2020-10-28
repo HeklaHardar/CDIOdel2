@@ -2,7 +2,7 @@ package Game;
 
 public class Fields {
     private boolean test = false;
-    boolean hasExtraTurn = false;
+    private boolean hasExtraTurn = false;
     private int money = 0;
     String[] danishDescription = {"Du banker på døren til et højt tårn. En troldmand som bor der åbner døren, og spørger dig om han kan teste sin nye trylleformular på dig. Du siger ja, og han tryller dine øre grønne og giver dig 250 for ulejligheden.", "Du kommer forbi et stort krater. Du synes det er meget flot, og du vil gerne vise det til din mor,  så du køber en souvenir med et billede af det. Du betaler 100.", "Du har nået indgangen til paladset, og finder 100 på jorden og beholder dem.", "Du går gennem ørkenen. Det er meget koldt, så du finder en kaffeautomat og køber 1 kop kaffe(som er meget dyr) for at holde varmen. Du mister 20.", "Du ankommer til Walled city. Du får et job som turguide og tjener 180.", "Du holder pause ved klosteret, der sker ikke noget."
             , "Det er meget mørkt inde i den sorte grotte, så du er nødt til at købe en lommelygte. Den koster 70.", "Du finder nogle hytter i bjergene, hvor beboerne giver dig et måltid mad og en seng for natten (værdi 60)", "Du går hen til en meget lodden væg. Idet du sætter din bagage ned så du kan hvile dig kommer væggen pludselig til live og prøver at bide dig med sit varulve-ansigt. Den spiser din madpakke (værdi 80), og du skynder dig hurtigt væk til et nyt sted.", "Du snubler pludselig, og falder ned i et stort hul. Du når med nød og næppe at gribe fat i kanten, men da du kravler op af hullet igen falder 50 ud af din lomme, og forsvinder ned i hullets dyb.", "Du finder en mine fuld af guld. Du tager så meget du kan bære, men du er ikke særligt stærk, så du tjener kun 650."};
@@ -112,10 +112,6 @@ public class Fields {
 
     public boolean isHasExtraTurn() {
         return hasExtraTurn;
-    }
-
-    public void setHasExtraTurn(boolean hasExtraTurn) {
-        this.hasExtraTurn = hasExtraTurn;
     }
 
     public int getMoney() {

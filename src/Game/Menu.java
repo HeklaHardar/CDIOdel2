@@ -13,7 +13,6 @@ public class Menu {
 
     // Starts the menu
     public void Menu() {
-
         // Select language
         System.out.println("Dansk/English");
 
