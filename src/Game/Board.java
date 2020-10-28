@@ -26,8 +26,8 @@ public class Board {
             Player p2 = new Player(menu1.getPlayer2());
 
             // Arrays for text for different languages
-            String[] textDanish = {" summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har Vundet! ", "Tryk enter for at slå med terningerne, eller skriv 'exit' for at afbryde programmet", "Starter nyt spil", "Vil du spille et nyt spil? For at starte et nyt spil skriv 'ja', tryk enter for at slutte spillet"};
-            String[] textEnglish = {" the sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices or type exit to exit game", "Starting new game", "Do you want to start a new game, type 'yes' to start a new game, press enter to end to game"};
+            String[] textDanish = {"Summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har vundet! ", "Tryk enter for at slå med terningerne, eller skriv 'exit' for at afbryde programmet", "Starter nyt spil", "Vil du spille et nyt spil? For at starte et nyt spil skriv 'ja', tryk enter for at slutte spillet", "Det er ", "'s tur"};
+            String[] textEnglish = {"The sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices or type exit to exit game", "Starting new game", "Do you want to start a new game, type 'yes' to start a new game, press enter to end to game", "It is ", "'s turn"};
             String[] currentLanguage = new String[3];
 
 
@@ -47,6 +47,7 @@ public class Board {
 
             while (isWinner == false) {
                 //Ask the user to press enter to continue or exit to end game
+                System.out.println(currentLanguage[7] + Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[8]);
                 System.out.println(currentLanguage[4]);
                 String endgame = scan.nextLine();
                 endgame = endgame.toLowerCase();
@@ -56,7 +57,7 @@ public class Board {
                 //roll dices and outputs roll, checks current player and language
                 d1.roll();
                 int sum = d1.sum();
-                System.out.println(Players[currentplayer.getCurrentPlayer()].playerString() + currentLanguage[0] + sum);
+                System.out.println(currentLanguage[0] + sum);
 
                 //Calculates new score
                 Fields f1 = new Fields(sum, menu1.getLanguage());
