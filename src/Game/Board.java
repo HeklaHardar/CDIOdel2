@@ -26,8 +26,8 @@ public class Board {
             Player p2 = new Player(menu1.getPlayer2());
 
             // Arrays for text for different languages
-            String[] textDanish = {" summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har Vundet! ", "Tryk enter for at slå med terningerne, eller skriv 'exit' for at afbryde programmet", "Starter nyt spil"};
-            String[] textEnglish = {" the sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices or type exit to exit game", "Starting new game"};
+            String[] textDanish = {" summen af dine slag er: ", "Points: ", " fik en ekstra tur", " har Vundet! ", "Tryk enter for at slå med terningerne, eller skriv 'exit' for at afbryde programmet", "Starter nyt spil", "Vil du spille et nyt spil? For at starte et nyt spil skriv 'ja', tryk enter for at slutte spillet"};
+            String[] textEnglish = {" the sum of dices is: ", "Points: ", " got An Extra Turn", " has Won ", "Press enter to roll dices or type exit to exit game", "Starting new game", "Do you want to start a new game, type 'yes' to start a new game, press enter to end to game"};
             String[] currentLanguage = new String[3];
 
 
@@ -88,7 +88,15 @@ public class Board {
                     currentplayer.setCurrentPlayer(0);
                 }
             }
-            System.out.println(currentLanguage[5]);
+            System.out.println(currentLanguage[6]);
+            String endgame = scan.nextLine();
+            endgame.toLowerCase();
+            if (endgame.equals("yes")||endgame.equals("ja")){
+                System.out.println(currentLanguage[5]);
+            }
+            else {
+                stillplaying = 0;
+            }
         }
     }
 }
