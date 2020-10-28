@@ -51,8 +51,7 @@ public class Board {
                 String endgame = scan.nextLine();
                 endgame = endgame.toLowerCase();
                 if (endgame.equals("exit")){
-                    stillplaying = 0;
-                    break;
+                    System.exit(0);
                 }
                 //roll dices and outputs roll, checks current player and language
                 d1.roll();
